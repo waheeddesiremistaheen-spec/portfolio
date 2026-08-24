@@ -212,7 +212,9 @@ export function GitHubSection() {
                   <h3 className="truncate font-display text-xl font-semibold text-[var(--text)]">
                     {state?.profile.name ?? 'Desire'}
                   </h3>
-                  <p className="font-mono text-xs text-[var(--text-faint)]">@{state?.profile.login}</p>
+                  <p className="font-mono text-xs text-[var(--text-faint)]">
+                    @{state?.profile.login ?? site.githubUsername}
+                  </p>
                   <span
                     className={cn(
                       'mt-1.5 inline-flex items-center gap-1 rounded-full px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider',

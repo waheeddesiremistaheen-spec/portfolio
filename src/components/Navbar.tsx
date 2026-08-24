@@ -15,6 +15,8 @@ const NAV_ITEMS = [
   { id: 'contact', label: 'Contact' },
 ]
 
+const NAV_IDS = NAV_ITEMS.map((i) => i.id)
+
 interface NavbarProps {
   theme: Theme
   toggleTheme: () => void
@@ -23,7 +25,7 @@ interface NavbarProps {
 export function Navbar({ theme, toggleTheme }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const activeId = useScrollSpy(NAV_ITEMS.map((i) => i.id))
+  const activeId = useScrollSpy(NAV_IDS)
 
   const { scrollYProgress } = useScroll()
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 26, mass: 0.4 })
